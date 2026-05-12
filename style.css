@@ -139,6 +139,7 @@ button:hover{
   margin-top:20px;
 }
 
+
 /* POSTER */
 
 .posterGrid{
@@ -174,6 +175,34 @@ button:hover{
 
 .posterText h3{
   margin-top:0;
+}
+
+/* ========================= */
+
+  transform:translateY(-8px) scale(1.03);
+}
+
+.tips-card h3,
+.fact-box h3{
+  margin-top:0;
+} 
+
+.challenge-box{
+
+  max-width:500px;
+
+  margin:auto;
+
+  background:rgba(255,255,255,0.92);
+
+  color:#0b4d2b;
+
+  padding:30px;
+
+  border-radius:25px;
+
+  box-shadow:
+  0 5px 20px rgba(0,0,0,0.3);
 }
 
 /* ========================= */
@@ -254,9 +283,41 @@ button:hover{
 
   font-size:16px;
 }
+/* ========================= */
+/* CHALLENGE */
+/* ========================= */
+
+.challenge-box{
+
+  max-width:500px;
+
+  margin:auto;
+
+  background:rgba(255,255,255,0.92);
+
+  color:#0b4d2b;
+
+  padding:30px;
+
+  border-radius:25px;
+
+  box-shadow:
+  0 5px 20px rgba(0,0,0,0.3);
+}
 
 .challenge-box h3{
   font-size:28px;
+}
+
+.challenge-box button{
+
+  margin-top:20px;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  transition:0.3s;
 }
 
 .challenge-box button:hover{
@@ -275,9 +336,4 @@ button:hover{
   font-weight:bold;
 
   color:#0b4d2b;
-}
-
-.tips-card h3,
-.fact-box h3{
-  margin-top:0;
 }
