@@ -1,0 +1,270 @@
+<html lang="ms"> <!-- Start of HTML document, language set to Malay -->
+
+<!-- HEAD SECTION -->
+<head> <!-- Contains website settings, title, links, metadata -->
+
+  <meta charset="UTF-8"> <!-- Supports special characters and emojis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes website responsive on phones/tablets -->
+
+  <title>GreenSite</title> <!-- Website title shown on browser tab -->
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css"> <!-- Connects external CSS file -->
+
+  <!-- LEAFLET MAP LIBRARY -->
+  <link rel="stylesheet"
+  href="https://unpkg.com/leaflet/dist/leaflet.css"/> <!-- Loads Leaflet map styles -->
+
+</head> <!-- End of head section -->
+
+<!-- BODY SECTION -->
+<body> <!-- All visible website content starts here -->
+
+<!-- HEADER -->
+<header> <!-- Top section of website -->
+
+  <h1>♻️ GreenSite</h1> <!-- Main website heading -->
+  <p>Smart Recycling Platform</p> <!-- Small subtitle -->
+
+  <nav> <!-- Navigation menu -->
+    <a href="#harga">Harga</a> <!-- Jump to Harga section -->
+    <a href="#kalkulator">Kalkulator</a> <!-- Jump to Calculator section -->
+    <a href="#lokasi">Lokasi</a> <!-- Jump to Location section -->
+    <a href="#galeri">Galeri</a> <!-- Jump to Gallery section -->
+  </nav> <!-- End navigation -->
+
+</header> <!-- End header -->
+
+<!-- HARGA SECTION -->
+<section id="harga"> <!-- Recycling prices section -->
+
+  <h2>Harga & Trend Semasa</h2> <!-- Section title -->
+
+  <div class="grid"> <!-- Grid layout container -->
+
+    <!-- CARD 1 -->
+    <div class="card"> <!-- Start recycling card -->
+      <h3>Botol Plastik</h3> <!-- Material name -->
+      <span id="botol_plastikPrice">RM0.10/kg</span> <!-- Price -->
+      <p id="botol_plastikTrend" class="up">📈 Naik</p> <!-- Trend status -->
+
+      <div class="criteria"> <!-- Requirements box -->
+        ✔ Bersih<br> <!-- Must be clean -->
+        ✔ Kering<br> <!-- Must be dry -->
+        ✖ Berminyak <!-- Cannot be oily -->
+      </div> <!-- End criteria -->
+    </div> <!-- End card -->
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <h3>Kadbod</h3> <!-- Cardboard -->
+      <span id="kadbodPrice">RM0.15/kg</span> <!-- Price -->
+      <p id="kadbodTrend" class="stable">➖ Stabil</p> <!-- Stable trend -->
+
+      <div class="criteria">
+        ✔ Kering<br> <!-- Dry only -->
+        ✖ Basah <!-- Cannot be wet -->
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <h3>Tin Aluminium</h3> <!-- Aluminium cans -->
+      <span id="tin_aluminiumPrice">RM0.10/kg</span>
+      <p id="tin_aluminiumTrend" class="down">📉 Turun</p> <!-- Down trend -->
+
+      <div class="criteria">
+        ✔ Bersih<br>
+        ✖ Berkarat <!-- Cannot be rusty -->
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card">
+      <h3>Tembaga</h3> <!-- Copper -->
+      <span id="tembagaPrice">RM2.50/kg</span>
+      <p id="tembagaTrend" class="up">📈 Naik</p>
+
+      <div class="criteria">
+        ✔ Tembaga tulen<br> <!-- Pure copper -->
+        ✖ Campur plastik <!-- No plastic mix -->
+      </div>
+    </div>
+
+    <!-- More cards below follow same structure -->
+    <!-- h3 = item name -->
+    <!-- span = item price -->
+    <!-- p = price trend -->
+    <!-- criteria = recycling conditions -->
+
+  </div> <!-- End grid -->
+
+</section> <!-- End harga section -->
+
+<!-- CALCULATOR SECTION -->
+<section id="kalkulator">
+
+  <h2>Kalkulator Recycle</h2> <!-- Calculator title -->
+
+  <div class="box"> <!-- Calculator container -->
+
+    <select id="material"></select> <!-- Dropdown for selecting material -->
+
+    <input
+    type="number"
+    id="qty"
+    placeholder="Masukkan kuantiti (unit/kg)"> <!-- User enters quantity -->
+
+    <button onclick="calculate()"> <!-- Button runs calculate() function -->
+      Kira
+    </button>
+
+    <p id="result"></p> <!-- Shows calculation result -->
+    <p id="motivation"></p> <!-- Shows motivational text -->
+
+  </div>
+
+</section>
+
+<!-- MAP SECTION -->
+<section id="lokasi">
+
+  <h2>Pusat Kitar Semula Berdekatan</h2> <!-- Nearby recycling centers -->
+
+  <button onclick="findLocation()"> <!-- Runs location function -->
+    Cari Lokasi Saya
+  </button>
+
+  <div id="map"></div> <!-- Map appears here -->
+
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="galeri">
+
+  <h2>🌍 Galeri</h2> <!-- Gallery title -->
+
+  <div class="posterGrid"> <!-- Grid for posters -->
+
+    <div class="poster"> <!-- Poster card -->
+      <img src="https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=1200&auto=format&fit=crop">
+      <!-- Poster image -->
+
+      <div class="posterText"> <!-- Text area -->
+        <h3>Kurangkan Plastik</h3> <!-- Poster heading -->
+        <p>
+          Plastik mengambil masa 450 tahun untuk terurai.
+          Kurangkan penggunaan plastik sekali guna.
+        </p> <!-- Poster description -->
+      </div>
+    </div>
+
+    <!-- Other posters follow same structure -->
+
+<!-- RECYCLING TIPS SECTION -->
+<section id="tips">
+
+  <h2>🌱 Tips Kitar Semula</h2> <!-- Tips title -->
+
+  <div class="tips-grid"> <!-- Tips container -->
+
+    <div class="tips-card"> <!-- Single tip card -->
+      <h3>♻️ Asingkan Sampah</h3> <!-- Tip title -->
+      <p>
+        Asingkan plastik, kaca, logam dan
+        kertas supaya proses recycle lebih mudah.
+      </p>
+    </div>
+
+    <div class="tips-card">
+      <h3>💧 Bersihkan Bahan</h3>
+      <p>
+        Basuh bekas makanan dan botol sebelum
+        dihantar ke pusat recycle.
+      </p>
+    </div>
+
+    <div class="tips-card">
+      <h3>🌍 Kurangkan Plastik</h3>
+      <p>
+        Gunakan beg guna semula dan elakkan
+        plastik sekali guna.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ENVIRONMENT FACTS SECTION -->
+<section id="facts">
+
+  <h2>📊 Fakta Alam Sekitar</h2> <!-- Facts title -->
+
+  <div class="facts-grid">
+
+    <div class="fact-box"> <!-- Fact box -->
+      <h3>500 Tahun</h3>
+      <p>
+        Plastik mengambil masa sehingga
+        500 tahun untuk terurai.
+      </p>
+    </div>
+
+    <div class="fact-box">
+      <h3>1 Tan Kertas</h3>
+      <p>
+        Mengitar semula 1 tan kertas dapat
+        menyelamatkan 17 pokok.
+      </p>
+    </div>
+
+    <div class="fact-box">
+      <h3>95% Tenaga</h3>
+      <p>
+        Aluminium recycle menjimatkan
+        sehingga 95% tenaga.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- WEEKLY CHALLENGE SECTION -->
+<section id="challenge">
+
+  <h2>🏆 Cabaran Mingguan</h2> <!-- Challenge title -->
+
+  <div class="challenge-box"> <!-- Challenge container -->
+
+    <h3>Recycle 10 Barang Minggu Ini</h3> <!-- Challenge heading -->
+
+    <p>
+      Kumpulkan sekurang-kurangnya
+      10 barang recycle minggu ini
+      untuk membantu mengurangkan
+      pencemaran alam sekitar.
+    </p> <!-- Challenge description -->
+
+    <button onclick="joinChallenge()"> <!-- Runs challenge function -->
+      Sertai Cabaran
+    </button>
+
+    <p id="challengeText"></p> <!-- Displays challenge message -->
+
+  </div>
+    
+  </div>
+
+</section>
+
+<!-- JAVASCRIPT -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-- Loads Leaflet map library -->
+
+<script src="script.js"></script>
+<!-- Connects external JavaScript file -->
+
+</body> <!-- End body -->
+</html> <!-- End HTML document -->

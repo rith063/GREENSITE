@@ -1,0 +1,389 @@
+/* BODY STYLING */
+body{
+  margin:0; /* Removes default browser spacing */
+  font-family:Segoe UI; /* Sets website font */
+
+  background:
+  url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6")
+  no-repeat center center fixed;
+  /* Background image settings:
+     no-repeat = image does not repeat
+     center center = centered horizontally and vertically
+     fixed = image stays fixed when scrolling */
+
+  background-size:cover; /* Makes image cover whole screen */
+}
+
+/* DARK OVERLAY EFFECT */
+body::before{
+  content:""; /* Creates empty pseudo-element */
+  position:fixed; /* Stays fixed on screen */
+  inset:0; /* Covers entire page */
+  background:rgba(0,0,0,0.55); /* Black transparent overlay */
+  z-index:-1; /* Sends overlay behind content */
+}
+
+/* HEADER */
+header{
+  text-align:center; /* Centers text */
+  padding:50px; /* Space inside header */
+  color:white; /* White text color */
+}
+
+/* MAIN TITLE */
+header h1{
+  font-size:50px; /* Large heading text */
+}
+
+/* NAVIGATION BAR */
+nav{
+  margin-top:20px; /* Space above nav */
+}
+
+/* NAVIGATION BUTTONS */
+nav a{
+  background:white; /* White background */
+  padding:12px 18px; /* Inner spacing */
+  margin:5px; /* Space between buttons */
+  border-radius:30px; /* Rounded edges */
+  text-decoration:none; /* Removes underline */
+  color:#0b4d2b; /* Dark green text */
+  font-weight:bold; /* Bold text */
+}
+
+/* GENERAL SECTION STYLING */
+section{
+  padding:60px 20px; /* Top-bottom and left-right spacing */
+  text-align:center; /* Centers text */
+  color:white; /* White text */
+}
+
+/* GRID LAYOUT */
+.grid{
+  display:grid; /* Enables CSS Grid */
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+  /* Creates responsive columns */
+
+  gap:20px; /* Space between grid items */
+}
+
+/* CARD DESIGN */
+.card{
+  position:relative; /* Allows absolute positioning inside */
+  background:rgba(255,255,255,0.93); /* Semi-transparent white */
+  color:#0b4d2b; /* Green text */
+  padding:20px; /* Inner spacing */
+  border-radius:20px; /* Rounded corners */
+  overflow:hidden; /* Hides overflowing content */
+  transition:0.3s; /* Smooth hover animation */
+}
+
+/* CARD HOVER EFFECT */
+.card:hover{
+  transform:translateY(-5px); /* Moves card upward */
+}
+
+/* PRICE TEXT */
+.card span{
+  font-size:20px; /* Bigger text */
+  font-weight:bold; /* Bold text */
+}
+
+/* TREND COLORS */
+.up{
+  color:green; /* Green for increasing trend */
+}
+
+.down{
+  color:red; /* Red for decreasing trend */
+}
+
+.stable{
+  color:orange; /* Orange for stable trend */
+}
+
+/* CRITERIA BOX */
+.criteria{
+  position:absolute; /* Positioned inside card */
+  bottom:-100%; /* Hidden below card */
+  left:0; /* Align left */
+  width:100%; /* Full width */
+  background:rgba(0,70,30,0.95); /* Dark green background */
+  color:white; /* White text */
+  padding:15px; /* Inner spacing */
+  transition:0.4s; /* Smooth slide animation */
+}
+
+/* SHOW CRITERIA ON HOVER */
+.card:hover .criteria{
+  bottom:0; /* Slides criteria upward */
+}
+
+/* CALCULATOR BOX */
+.box{
+  width:320px; /* Fixed width */
+  margin:auto; /* Centers box */
+  background:rgba(255,255,255,0.92); /* Semi-transparent background */
+  padding:25px; /* Inner spacing */
+  border-radius:20px; /* Rounded corners */
+  color:black; /* Black text */
+}
+
+/* FORM ELEMENTS */
+.box select,
+.box input{
+  width:100%; /* Full width */
+  padding:12px; /* Inner spacing */
+  margin:10px 0; /* Vertical spacing */
+  border-radius:10px; /* Rounded edges */
+  border:none; /* Removes border */
+}
+
+/* BUTTON DESIGN */
+button{
+  width:100%; /* Full width */
+  padding:12px; /* Inner spacing */
+  background:#0b4d2b; /* Green background */
+  color:white; /* White text */
+  border:none; /* Removes border */
+  border-radius:10px; /* Rounded edges */
+  cursor:pointer; /* Pointer cursor on hover */
+}
+
+/* BUTTON HOVER EFFECT */
+button:hover{
+  background:#119c56; /* Lighter green */
+}
+
+/* MAP STYLING */
+#map{
+  height:450px; /* Map height */
+  border-radius:20px; /* Rounded corners */
+  margin-top:20px; /* Space above map */
+}
+
+/* ========================= */
+/* POSTER SECTION */
+/* ========================= */
+
+/* POSTER GRID */
+.posterGrid{
+  display:grid; /* Grid layout */
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+  /* Responsive columns */
+
+  gap:25px; /* Space between posters */
+  margin-top:40px; /* Space above grid */
+}
+
+/* POSTER CARD */
+.poster{
+  background:rgba(255,255,255,0.95); /* White transparent background */
+  border-radius:20px; /* Rounded corners */
+  overflow:hidden; /* Hides overflow */
+  color:#0b4d2b; /* Green text */
+  transition:0.4s; /* Smooth animation */
+}
+
+/* POSTER HOVER */
+.poster:hover{
+  transform:scale(1.03); /* Slight zoom effect */
+}
+
+/* POSTER IMAGE */
+.poster img{
+  width:100%; /* Full width */
+  height:250px; /* Fixed height */
+  object-fit:cover; /* Crops image properly */
+}
+
+/* POSTER TEXT AREA */
+.posterText{
+  padding:20px; /* Inner spacing */
+}
+
+/* POSTER TITLE */
+.posterText h3{
+  margin-top:0; /* Removes top margin */
+}
+
+/* ========================= */
+
+/* FLOATING EFFECT */
+transform:translateY(-8px) scale(1.03);
+/* Moves up and enlarges slightly */
+
+/* REMOVE TOP MARGIN */
+.tips-card h3,
+.fact-box h3{
+  margin-top:0;
+}
+
+/* CHALLENGE BOX */
+.challenge-box{
+
+  max-width:500px; /* Maximum width */
+
+  margin:auto; /* Center align */
+
+  background:rgba(255,255,255,0.92); /* Transparent white */
+
+  color:#0b4d2b; /* Green text */
+
+  padding:30px; /* Inner spacing */
+
+  border-radius:25px; /* Rounded corners */
+
+  box-shadow:
+  0 5px 20px rgba(0,0,0,0.3);
+  /* Shadow effect */
+}
+
+/* ========================= */
+/* TIPS + FACTS + CHALLENGE */
+/* ========================= */
+
+#tips,
+#facts,
+#challenge{
+  padding:60px 20px; /* Section spacing */
+}
+
+/* GRID LAYOUT */
+
+.tips-grid,
+.facts-grid{
+
+  display:grid; /* Grid system */
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+  /* Responsive boxes */
+
+  gap:20px; /* Space between items */
+
+  margin-top:30px; /* Space above */
+}
+
+/* BOX DESIGN */
+
+.tips-card,
+.fact-box,
+.challenge-box{
+
+  background:rgba(255,255,255,0.92); /* Transparent background */
+
+  color:#0b4d2b; /* Green text */
+
+  padding:25px; /* Inner spacing */
+
+  border-radius:20px; /* Rounded corners */
+
+  box-shadow:
+  0 8px 20px rgba(0,0,0,0.25);
+  /* Shadow */
+
+  backdrop-filter:blur(5px);
+  /* Blur effect */
+
+  transition:0.3s; /* Smooth animation */
+}
+
+/* HOVER EFFECT */
+
+.tips-card:hover,
+.fact-box:hover,
+.challenge-box:hover{
+
+  transform:
+  translateY(-8px)
+  scale(1.03);
+  /* Move upward and enlarge */
+
+  box-shadow:
+  0 12px 25px rgba(0,0,0,0.35);
+  /* Stronger shadow */
+}
+
+/* CHALLENGE BOX */
+
+.challenge-box{
+
+  max-width:500px; /* Limit width */
+
+  margin:auto; /* Center align */
+}
+
+/* CHALLENGE BUTTON */
+
+.challenge-box button{
+
+  margin-top:15px; /* Space above button */
+
+  cursor:pointer; /* Pointer cursor */
+
+  font-size:16px; /* Text size */
+}
+
+/* ========================= */
+/* CHALLENGE */
+/* ========================= */
+
+.challenge-box{
+
+  max-width:500px;
+
+  margin:auto;
+
+  background:rgba(255,255,255,0.92);
+
+  color:#0b4d2b;
+
+  padding:30px;
+
+  border-radius:25px;
+
+  box-shadow:
+  0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* CHALLENGE TITLE */
+.challenge-box h3{
+  font-size:28px; /* Large title */
+}
+
+/* CHALLENGE BUTTON */
+.challenge-box button{
+
+  margin-top:20px;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  transition:0.3s; /* Smooth hover */
+}
+
+/* BUTTON HOVER EFFECT */
+.challenge-box button:hover{
+
+  background:#12a05a; /* Lighter green */
+
+  transform:scale(1.05); /* Enlarges button */
+}
+
+/* CHALLENGE TEXT */
+#challengeText{
+
+  margin-top:20px; /* Space above */
+
+  font-size:20px; /* Bigger text */
+
+  font-weight:bold; /* Bold */
+
+  color:#0b4d2b; /* Green text */
+}
