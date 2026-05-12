@@ -1,0 +1,2 @@
+# GREENSITE
+Smart Recycling Platform
