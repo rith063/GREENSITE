@@ -4,25 +4,27 @@
 
 const prices = {
 
-  botol_plastik:0.10,
-  kadbod:0.40,
-  tin_aluminium:0.10,
+  botol_plastik:0.40,
+  kadbod:0.25,
+  tin_aluminium:2.30,
   tembaga:25.00,
-  besi:0.30,
-  surat_khabar:0.15,
+  besi:0.50,
+  surat_khabar:0.35,
   majalah:0.12,
   botol_kaca:0.25,
-  minyak_masak:2.00,
+  minyak_masak:2.70,
   pvc:0.50,
 
   telefon_lama:5.00,
-  laptop_lama:50.00,
-  tv_lama:15.00,
-  bateri_kereta:15.50,
-  aircond:80.00,
-  mesin_basuh:62.50,
-  peti_ais:70.00,
-  tayar:3.00
+  laptop_lama:2.50,
+  tv_lama:3.00,
+  bateri_kereta:0.50,
+  aircond:5.00,
+  mesin_basuh:7.00,
+  peti_ais:7.00,
+  tayar:3.00,
+  cpu_lengkap:5.00,
+  wayar:1.00
 
 };
 
@@ -72,7 +74,7 @@ function updateLivePrices(){
     if(priceElement){
 
       let type =
-      ["telefon_lama","laptop_lama","tv_lama","bateri_kereta","aircond","mesin_basuh","peti_ais","tayar"]
+      ["telefon_lama","laptop_lama","tv_lama","bateri_kereta","aircond","mesin_basuh","peti_ais","tayar","cpu_lengkap","wayar"]
       .includes(item)
       ? "/unit"
       : "/kg";
@@ -114,8 +116,8 @@ function updateLivePrices(){
 
 }
 
-// update every 5 seconds
-setInterval(updateLivePrices,5000);
+// update every 1 day
+setInterval(updateLivePrices,86400000);
 
 // ======================
 // CALCULATOR
@@ -259,6 +261,7 @@ function findLocation(){
   });
 
 }
+
 
 // =====================
 // RECYCLE CHALLENGE
