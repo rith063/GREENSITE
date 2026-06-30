@@ -1,389 +1,1280 @@
-/* BODY STYLING */
 body{
-  margin:0; /* Removes default browser spacing */
-  font-family:Segoe UI; /* Sets website font */
 
-  background:
-  url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6")
-  no-repeat center center fixed;
-  /* Background image settings:
-     no-repeat = image does not repeat
-     center center = centered horizontally and vertically
-     fixed = image stays fixed when scrolling */
 
-  background-size:cover; /* Makes image cover whole screen */
+
+margin:0;
+
+
+
+font-family:Segoe UI;
+
+
+
+
+
+background:
+
+url("https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXBhX9nw7oQ94O3oumG8Lbh47ZSNgqeLhBpJBnFU9fNMx6CuLjtSOmAd%2Fm8Kau7%2B9c1RhREMt%2F9vycEffO5wn92Ho%2FG7ValLmgbZMMvaWEQfy7l13v%2BIRGw%2Bv%2B7yOrQmPg3rUXJ76LEjOEpJXaFEhJOhkOvgwJWhElGkRN7YQtDWOY8X4Qh3z4v7yhCf9wdMstA9mPPHX2vX8lNm8MFcYtryugauCDiC8sFW%2BpJIIvf%2FluGqlmwrmtu25E0IakGpo6elnN%2BChCDw2gFrysz6LKKxa4KOlECnfrnyIrXA2i4wunWAx0t03b9Po8W5mJKSKFK5W1j6nEjq13IrCxuAK%2Bm14AjkU6%2F4%2FrC2SjhA2t2TOiXbJ9evM%2Btj3PK2HlaxUAJnn2hkTyy6u0uKCQl89fBP%2FaXr5N7AwpF0SGmJupFuaMBeo%2FLTSvGMDVJSVfBNQ%2B6s3ZdRdZ%2Bi%2BbCiKjj0DJOLlC4%2BPg59g4XgDfYYQr0qoULu6LRN9%2FDk0C%2B3hg7JSfOCs1Z2M0qtJR5VE9mQqqIRirhf2ijPTQhHUrVpoptY3C8AZXgqjPL6iUHLXuUMrBCGW2MmXhOIIwPa7Xg4J4tOUPV5PwudqD%2FHLBLdQWnBZE5Lz%2BneFunjNbiNQy7n9rcqS1UllFYa74tDY1YfAMpOhPVDjNIhw3hgLhLFqU%3D&allow_caching=true&sz=w512")
+
+
+
+no-repeat center center fixed;
+
+
+
+
+
+background-size:cover;
+
+
+
+
 }
 
-/* DARK OVERLAY EFFECT */
+
+
+
+
+
+
 body::before{
-  content:""; /* Creates empty pseudo-element */
-  position:fixed; /* Stays fixed on screen */
-  inset:0; /* Covers entire page */
-  background:rgba(0,0,0,0.55); /* Black transparent overlay */
-  z-index:-1; /* Sends overlay behind content */
+
+
+
+content:"";
+
+
+
+position:fixed;
+
+
+
+inset:0;
+
+
+
+background:rgba(0,0,0,0.20);
+
+
+
+z-index:-1;
+
+
+
 }
 
-/* HEADER */
+
+
+
+
+
+
+
+
 header{
-  text-align:center; /* Centers text */
-  padding:50px; /* Space inside header */
-  color:white; /* White text color */
+
+
+
+text-align:center;
+
+
+
+padding:50px;
+
+
+
+color:#06402a;
+  
+
+
+
 }
 
-/* MAIN TITLE */
+
+
+
+
+
+
 header h1{
-  font-size:50px; /* Large heading text */
+
+
+
+font-size:50px;
+font-family:Arial, Sans serif
+
+ 
+  
+
+
+
 }
 
-/* NAVIGATION BAR */
+
+
+
+
+
+
 nav{
-  margin-top:20px; /* Space above nav */
+
+
+
+margin-top:20px;
+
+
+
 }
 
-/* NAVIGATION BUTTONS */
+
+
+
+
+
+
 nav a{
-  background:white; /* White background */
-  padding:12px 18px; /* Inner spacing */
-  margin:5px; /* Space between buttons */
-  border-radius:30px; /* Rounded edges */
-  text-decoration:none; /* Removes underline */
-  color:#0b4d2b; /* Dark green text */
-  font-weight:bold; /* Bold text */
+
+
+
+background:white;
+
+
+
+padding:12px 18px;
+
+
+
+margin:5px;
+width: 300px;
+height: 100px;
+border-style: solid;
+border-color: #06402a;
+
+
+border-radius:30px;
+
+
+
+text-decoration:none;
+
+
+
+color:#0b4d2b;
+
+
+
+font-weight:bold;
+
+
+
 }
 
-/* GENERAL SECTION STYLING */
+
+
+
+
+
+
+
+
 section{
-  padding:60px 20px; /* Top-bottom and left-right spacing */
-  text-align:center; /* Centers text */
-  color:white; /* White text */
+
+
+
+padding:60px 20px;
+
+
+
+text-align:center;
+
+
+
+color:white;
+
+
+
 }
 
-/* GRID LAYOUT */
+
+
+
+
+
+
+
+
+/* HARGA */
+
+
+
+
+
 .grid{
-  display:grid; /* Enables CSS Grid */
 
-  grid-template-columns:
-  repeat(auto-fit,minmax(220px,1fr));
-  /* Creates responsive columns */
 
-  gap:20px; /* Space between grid items */
+
+display:grid;
+
+
+
+grid-template-columns:
+
+
+
+repeat(auto-fit,minmax(220px,1fr));
+
+
+
+gap:20px;
+
+
+
 }
 
-/* CARD DESIGN */
+
+
+
+
+
+
+
+
 .card{
-  position:relative; /* Allows absolute positioning inside */
-  background:rgba(255,255,255,0.93); /* Semi-transparent white */
-  color:#0b4d2b; /* Green text */
-  padding:20px; /* Inner spacing */
-  border-radius:20px; /* Rounded corners */
-  overflow:hidden; /* Hides overflowing content */
-  transition:0.3s; /* Smooth hover animation */
+
+
+
+position:relative;
+
+
+
+background:rgba(255,255,255,0.93);
+
+
+
+color:#0b4d2b;
+
+
+
+padding:20px;
+
+
+
+border-radius:20px;
+
+
+
+overflow:hidden;
+
+
+
+transition:0.3s;
+
+
+
+box-shadow:-10px 10px rgb(6,64,42)
+
+
+
 }
 
-/* CARD HOVER EFFECT */
+
+
+
+
+
+
 .card:hover{
-  transform:translateY(-5px); /* Moves card upward */
+
+
+
+transform:translateY(-5px);
+
+
+
 }
 
-/* PRICE TEXT */
+
+
+
+
+
+
 .card span{
-  font-size:20px; /* Bigger text */
-  font-weight:bold; /* Bold text */
+
+
+
+font-size:20px;
+
+
+
+font-weight:bold;
+
+
+
 }
 
-/* TREND COLORS */
+
+
+
+
+
+
 .up{
-  color:green; /* Green for increasing trend */
+
+
+
+color:green;
+
+
+
 }
+
+
+
+
+
+
 
 .down{
-  color:red; /* Red for decreasing trend */
+
+
+
+color:red;
+
+
+
 }
+
+
+
+
+
+
 
 .stable{
-  color:orange; /* Orange for stable trend */
+
+
+
+color:orange;
+
+
+
 }
 
-/* CRITERIA BOX */
+
+
+
+
+
+
 .criteria{
-  position:absolute; /* Positioned inside card */
-  bottom:-100%; /* Hidden below card */
-  left:0; /* Align left */
-  width:100%; /* Full width */
-  background:rgba(0,70,30,0.95); /* Dark green background */
-  color:white; /* White text */
-  padding:15px; /* Inner spacing */
-  transition:0.4s; /* Smooth slide animation */
+
+
+
+position:absolute;
+
+
+
+bottom:-100%;
+
+
+
+left:0;
+
+
+
+width:100%;
+
+
+
+
+
+background:rgba(0,70,30,0.95);
+
+
+
+color:white;
+
+
+
+padding:15px;
+
+
+
+
+
+transition:0.4s;
+
+
+
 }
 
-/* SHOW CRITERIA ON HOVER */
+
+
+
+
+
+
 .card:hover .criteria{
-  bottom:0; /* Slides criteria upward */
+
+
+
+bottom:0;
+
+
+
 }
 
-/* CALCULATOR BOX */
+
+
+
+
+
+
+
+
+
+
+/* KALKULATOR */
+
+
+
+
+
 .box{
-  width:320px; /* Fixed width */
-  margin:auto; /* Centers box */
-  background:rgba(255,255,255,0.92); /* Semi-transparent background */
-  padding:25px; /* Inner spacing */
-  border-radius:20px; /* Rounded corners */
-  color:black; /* Black text */
+
+
+
+
+
+width:320px;
+
+
+
+margin:auto;
+
+
+
+
+
+
+background:rgba(255,255,255,0.92);
+
+
+
+
+
+padding:25px;
+
+
+width: 300px;
+height: 150px;
+border-style: solid;
+border-color: #06402a;
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+color:black;
+
+
+
 }
 
-/* FORM ELEMENTS */
+
+
+
+
+
+
 .box select,
+
+
+
 .box input{
-  width:100%; /* Full width */
-  padding:12px; /* Inner spacing */
-  margin:10px 0; /* Vertical spacing */
-  border-radius:10px; /* Rounded edges */
-  border:none; /* Removes border */
+
+
+
+
+
+width:100%;
+
+
+
+
+
+padding:12px;
+
+
+
+
+
+margin:10px 0;
+
+
+
+
+
+border-radius:10px;
+
+
+
+
+
+border:none;
+
+
+
 }
 
-/* BUTTON DESIGN */
+
+
+
+
+
+
 button{
-  width:100%; /* Full width */
-  padding:12px; /* Inner spacing */
-  background:#0b4d2b; /* Green background */
-  color:white; /* White text */
-  border:none; /* Removes border */
-  border-radius:10px; /* Rounded edges */
-  cursor:pointer; /* Pointer cursor on hover */
+
+
+
+
+
+width:100%;
+
+
+
+
+
+padding:12px;
+
+
+
+
+
+background:#0b4b2b;
+
+
+
+
+
+color:white;
+
+
+
+
+
+border:none;
+
+
+
+
+
+border-radius:10px;
+
+
+
+
+
+cursor:pointer;
+
+
+
 }
 
-/* BUTTON HOVER EFFECT */
+
+
+
+
+
+
 button:hover{
-  background:#119c56; /* Lighter green */
+
+
+
+
+
+background:#119c56;
+
+
+
 }
 
-/* MAP STYLING */
+
+
+
+
+
+
+
+
+
+
+/* MAP */
+
+
+
+
+
 #map{
-  height:450px; /* Map height */
-  border-radius:20px; /* Rounded corners */
-  margin-top:20px; /* Space above map */
+
+
+
+
+
+height:450px;
+
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+margin-top:20px;
+
+
+
 }
 
-/* ========================= */
-/* POSTER SECTION */
-/* ========================= */
 
-/* POSTER GRID */
+
+
+
+
+
+
+
+
+
+/* POSTER */
+
+
+
+
+
 .posterGrid{
-  display:grid; /* Grid layout */
 
-  grid-template-columns:
-  repeat(auto-fit,minmax(300px,1fr));
-  /* Responsive columns */
 
-  gap:25px; /* Space between posters */
-  margin-top:40px; /* Space above grid */
+
+
+
+display:grid;
+
+
+
+
+
+grid-template-columns:
+
+
+
+repeat(auto-fit,minmax(300px,1fr));
+
+
+
+
+
+gap:25px;
+
+
+
+
+
+margin-top:40px;
+
+
+
 }
 
-/* POSTER CARD */
+
+
+
+
+
+
+
+
 .poster{
-  background:rgba(255,255,255,0.95); /* White transparent background */
-  border-radius:20px; /* Rounded corners */
-  overflow:hidden; /* Hides overflow */
-  color:#0b4d2b; /* Green text */
-  transition:0.4s; /* Smooth animation */
+
+
+
+
+
+background:rgba(255,255,255,0.95);
+
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+overflow:hidden;
+
+
+
+
+
+color:#0b4d2b;
+
+
+
+
+
+transition:0.4s;
+
+
+
 }
 
-/* POSTER HOVER */
+
+
+
+
+
+
+
+
 .poster:hover{
-  transform:scale(1.03); /* Slight zoom effect */
+
+
+
+
+
+transform:scale(1.03);
+
+
+
 }
 
-/* POSTER IMAGE */
+
+
+
+
+
+
+
+
 .poster img{
-  width:100%; /* Full width */
-  height:250px; /* Fixed height */
-  object-fit:cover; /* Crops image properly */
+
+
+
+
+
+width:100%;
+
+
+
+
+
+height:250px;
+
+
+
+
+
+object-fit:cover;
+
+
+
 }
 
-/* POSTER TEXT AREA */
+
+
+
+
+
+
 .posterText{
-  padding:20px; /* Inner spacing */
+
+
+
+
+
+padding:20px;
+
+
+
 }
 
-/* POSTER TITLE */
+
+
+
+
+
+
 .posterText h3{
-  margin-top:0; /* Removes top margin */
+
+
+
+
+
+margin-top:0;
+
+
+
 }
 
-/* ========================= */
 
-/* FLOATING EFFECT */
-transform:translateY(-8px) scale(1.03);
-/* Moves up and enlarges slightly */
 
-/* REMOVE TOP MARGIN */
-.tips-card h3,
-.fact-box h3{
-  margin-top:0;
-}
 
-/* CHALLENGE BOX */
-.challenge-box{
 
-  max-width:500px; /* Maximum width */
 
-  margin:auto; /* Center align */
 
-  background:rgba(255,255,255,0.92); /* Transparent white */
 
-  color:#0b4d2b; /* Green text */
 
-  padding:30px; /* Inner spacing */
 
-  border-radius:25px; /* Rounded corners */
 
-  box-shadow:
-  0 5px 20px rgba(0,0,0,0.3);
-  /* Shadow effect */
-}
-
-/* ========================= */
 /* TIPS + FACTS + CHALLENGE */
-/* ========================= */
+
+
+
+
 
 #tips,
+
+
+
 #facts,
+
+
+
 #challenge{
-  padding:60px 20px; /* Section spacing */
+
+
+
+
+
+padding:60px 20px;
+
+
+
 }
 
-/* GRID LAYOUT */
+
+
+
+
+
+
+
 
 .tips-grid,
+
+
+
 .facts-grid{
 
-  display:grid; /* Grid system */
 
-  grid-template-columns:
-  repeat(auto-fit,minmax(250px,1fr));
-  /* Responsive boxes */
 
-  gap:20px; /* Space between items */
 
-  margin-top:30px; /* Space above */
+
+display:grid;
+
+
+
+
+
+grid-template-columns:
+
+
+
+repeat(auto-fit,minmax(250px,1fr));
+
+
+
+
+
+gap:20px;
+
+
+
+
+
+margin-top:30px;
+
+
+
 }
 
-/* BOX DESIGN */
+
+
+
+
+
+
+
+
+
 
 .tips-card,
+
+
+
 .fact-box,
+
+
+
 .challenge-box{
 
-  background:rgba(255,255,255,0.92); /* Transparent background */
 
-  color:#0b4d2b; /* Green text */
 
-  padding:25px; /* Inner spacing */
 
-  border-radius:20px; /* Rounded corners */
 
-  box-shadow:
-  0 8px 20px rgba(0,0,0,0.25);
-  /* Shadow */
+background:rgba(255,255,255,0.92);
 
-  backdrop-filter:blur(5px);
-  /* Blur effect */
 
-  transition:0.3s; /* Smooth animation */
+
+
+
+color:#0b4d2b;
+
+
+
+
+
+padding:25px;
+
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+
+
+box-shadow:
+
+
+
+0 8px 20px rgba(0,0,0,0.25);
+
+
+
+
+
+
+
+backdrop-filter:blur(5px);
+
+
+
+
+
+
+
+transition:0.3s;
+
+
+
 }
 
-/* HOVER EFFECT */
+
+
+
+
+
+
+
+
+
 
 .tips-card:hover,
+
+
+
 .fact-box:hover,
+
+
+
 .challenge-box:hover{
 
-  transform:
-  translateY(-8px)
-  scale(1.03);
-  /* Move upward and enlarge */
 
-  box-shadow:
-  0 12px 25px rgba(0,0,0,0.35);
-  /* Stronger shadow */
+
+
+
+transform:
+
+
+
+translateY(-8px)
+
+
+
+scale(1.03);
+
+
+
+
+
+
+
+box-shadow:
+
+
+
+0 12px 25px rgba(0,0,0,0.35);
+
+
+
 }
 
-/* CHALLENGE BOX */
 
-.challenge-box{
 
-  max-width:500px; /* Limit width */
 
-  margin:auto; /* Center align */
-}
 
-/* CHALLENGE BUTTON */
 
-.challenge-box button{
 
-  margin-top:15px; /* Space above button */
 
-  cursor:pointer; /* Pointer cursor */
 
-  font-size:16px; /* Text size */
-}
 
-/* ========================= */
+
 /* CHALLENGE */
-/* ========================= */
+
+
+
+
 
 .challenge-box{
 
-  max-width:500px;
 
-  margin:auto;
 
-  background:rgba(255,255,255,0.92);
 
-  color:#0b4d2b;
 
-  padding:30px;
+max-width:500px;
 
-  border-radius:25px;
 
-  box-shadow:
-  0 5px 20px rgba(0,0,0,0.3);
+
+
+
+margin:auto;
+
+
+
 }
 
-/* CHALLENGE TITLE */
+
+
+
+
+
+
 .challenge-box h3{
-  font-size:28px; /* Large title */
+
+
+
+
+
+font-size:28px;
+
+
+
 }
 
-/* CHALLENGE BUTTON */
+
+
+
+
+
+
 .challenge-box button{
 
-  margin-top:20px;
 
-  cursor:pointer;
 
-  font-size:16px;
 
-  transition:0.3s; /* Smooth hover */
+
+margin-top:20px;
+
+
+
+
+
+cursor:pointer;
+
+
+
+
+
+font-size:16px;
+
+
+
+
+
+transition:0.3s;
+
+
+
 }
 
-/* BUTTON HOVER EFFECT */
+
+
+
+
+
+
+
+
 .challenge-box button:hover{
 
-  background:#12a05a; /* Lighter green */
 
-  transform:scale(1.05); /* Enlarges button */
+
+
+
+background:#12a05a;
+
+
+
+
+
+transform:scale(1.05);
+
+
+
 }
 
-/* CHALLENGE TEXT */
+
+
+
+
+
+
 #challengeText{
 
-  margin-top:20px; /* Space above */
 
-  font-size:20px; /* Bigger text */
 
-  font-weight:bold; /* Bold */
 
-  color:#0b4d2b; /* Green text */
+
+margin-top:20px;
+
+
+
+
+
+font-size:20px;
+
+
+
+
+
+font-weight:bold;
+
+
+
+
+
+color:#0b4d2b;
+
+
+
+}
+/* ANIMATION CARD MASUK */
+
+.card{
+  animation: fadeIn 1s ease;
+}
+
+
+@keyframes fadeIn{
+
+from{
+
+  opacity:0;
+
+  transform:translateY(20px);
+
+}
+
+
+to{
+
+  opacity:1;
+
+  transform:translateY(0);
+
+}
+
+}
+
+/* RESPONSIVE PHONE */
+
+@media(max-width:600px){
+
+header h1{
+
+font-size:35px;
+
+}
+
+
+header{
+
+padding:30px 10px;
+
+}
+
+
+nav a{
+
+display:block;
+
+margin:10px auto;
+
+width:200px;
+
+}
+
+
+section{
+
+padding:40px 10px;
+
+}
+
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.box{
+
+width:80%;
+
+height:auto;
+
+}
+
+
+#map{
+
+height:350px;
+
+}
+
+
+.posterGrid{
+
+grid-template-columns:1fr;
+
+}
+
 }
