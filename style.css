@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body{
 
 
@@ -118,6 +122,16 @@ header p{
   margin-top:15px;
 }
 
+h2 {
+  color: #06402a;
+  font-family: 'Poppins', 'Segoe UI', sans-serif; 
+  font-size: 30px;           
+  font-weight: 600;           
+  text-transform: uppercase; 
+  letter-spacing: 2px;       
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8); 
+  margin-bottom: 25px;
+}
 
 
 
@@ -149,8 +163,7 @@ padding:12px 18px;
 
 
 margin:5px;
-width: 300px;
-height: 100px;
+
 border-style: solid;
 border-color: #06402a;
 
@@ -168,9 +181,17 @@ color:#0b4d2b;
 
 
 font-weight:bold;
+  
+display: inline-block;
+  box-sizing: border-box; 
 
 
+}
 
+nav a:hover {
+  background: #0b4d2b; 
+  color: white;         
+  transition: 0.3s;     
 }
 
 
@@ -299,6 +320,8 @@ box-shadow:-10px 10px rgb(6,64,42)
 
 
 transform:translateY(-5px);
+  box-shadow: 0 10px 20px rgba(6, 64, 42, 0.3);
+  background: #ffffff;
 
 
 
@@ -479,7 +502,7 @@ padding:25px;
 
 
 width: 300px;
-height: 150px;
+height: auto;
 border-style: solid;
 border-color: #06402a;
 
@@ -611,6 +634,9 @@ button:hover{
 
 
 background:#119c56;
+  
+box-shadow: 0 0 15px #119c56, 0 0 25px #0b4b2b;
+  transition: 0.3s;
 
 
 
@@ -651,6 +677,8 @@ border-radius:20px;
 
 
 margin-top:20px;
+  
+display: none;
 
 
 
@@ -1288,4 +1316,9 @@ grid-template-columns:1fr;
 
 }
 
+ }
+
+button:active {
+  transform: scale(0.95); /* Butang mengecil 5% masa ditekan */
+  transition: 0.1s;
 }
