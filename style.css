@@ -97,17 +97,25 @@ color:#06402a;
 
 
 header h1{
+  
 
 
 
-font-size:50px;
-font-family:Arial, Sans serif
+font-size:70px;
+font-weight:bold;
 
  
   
 
 
 
+}
+
+header p{
+  font-size:24px;
+  font-weight:600;
+  color:#06402a;
+  margin-top:15px;
 }
 
 
@@ -125,10 +133,6 @@ margin-top:20px;
 
 
 }
-
-
-
-
 
 
 
@@ -168,6 +172,13 @@ font-weight:bold;
 
 
 }
+
+
+
+
+
+
+
 
 
 
@@ -1232,11 +1243,11 @@ padding:30px 10px;
 
 nav a{
 
-display:block;
+display:inline-block;
 
-margin:10px auto;
+margin:6px;
 
-width:200px;
+width:auto;
 
 }
 
