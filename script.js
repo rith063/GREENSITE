@@ -4,27 +4,27 @@
 
 const prices = {
 
-  botol_plastik:0.40,
-  kadbod:0.25,
-  tin_aluminium:2.30,
-  tembaga:25.00,
-  besi:0.50,
-  surat_khabar:0.35,
+  botol_plastik:0.10,
+  kadbod:0.15,
+  tin_aluminium:0.10,
+  tembaga:2.50,
+  besi:0.30,
+  surat_khabar:0.15,
   majalah:0.12,
   botol_kaca:0.25,
-  minyak_masak:2.70,
-  pvc:0.50,
+  minyak_masak:2.00,
+  pvc:0.20,
 
   telefon_lama:5.00,
-  laptop_lama:2.50,
-  tv_lama:3.00,
-  bateri_kereta:0.50,
-  aircond:5.00,
-  mesin_basuh:7.00,
+  laptop_lama:8.00,
+  tv_lama:4.00,
+  bateri_kereta:9.50,
+  aircond:6.00,
+  mesin_basuh:5.50,
   peti_ais:7.00,
   tayar:3.00,
-  cpu_lengkap:5.00,
-  wayar:1.00
+  cpu_lengkap:5,
+  wayar:1
 
 };
 
@@ -46,78 +46,6 @@ Object.keys(prices).forEach(item=>{
 
 });
 
-// LIVE TREND
-
-function updateLivePrices(){
-
-  Object.keys(prices).forEach(item=>{
-
-    let change =
-    (Math.random() * 0.10 - 0.05);
-
-    prices[item] += change;
-
-    if(prices[item] < 0.01){
-      prices[item] = 0.01;
-    }
-
-    let priceElement =
-    document.getElementById(
-      item + "Price"
-    );
-
-    let trendElement =
-    document.getElementById(
-      item + "Trend"
-    );
-
-    if(priceElement){
-
-      let type =
-      ["telefon_lama","laptop_lama","tv_lama","bateri_kereta","aircond","mesin_basuh","peti_ais","tayar","cpu_lengkap","wayar"]
-      .includes(item)
-      ? "/unit"
-      : "/kg";
-
-      priceElement.innerText =
-      "RM" +
-      prices[item].toFixed(2) +
-      type;
-
-      if(change > 0){
-
-        trendElement.innerHTML =
-        "📈 Naik";
-
-        trendElement.className =
-        "up";
-
-      }else if(change < 0){
-
-        trendElement.innerHTML =
-        "📉 Turun";
-
-        trendElement.className =
-        "down";
-
-      }else{
-
-        trendElement.innerHTML =
-        "➖ Stabil";
-
-        trendElement.className =
-        "stable";
-
-      }
-
-    }
-
-  });
-
-}
-
-// update every 1 day
-setInterval(updateLivePrices,86400000);
 
 // ======================
 // CALCULATOR
@@ -175,7 +103,7 @@ function calculate(){
 function findLocation(){
 
   if(!navigator.geolocation){
-    alert("Browser tak support location");
+    alert("Browser tidak support location");
     return;
   }
 
@@ -200,15 +128,33 @@ function findLocation(){
 
     // REAL RECYCLE QUERY
 
-    let query = `
-      [out:json];
-      (
-        node["amenity"="recycling"](around:20000,${lat},${lon});
-        way["amenity"="recycling"](around:20000,${lat},${lon});
-        relation["amenity"="recycling"](around:20000,${lat},${lon});
-      );
-      out center;
-    `;
+   // REAL RECYCLE QUERY 10KM
+
+let query = `
+
+[out:json];
+
+(
+
+node["amenity"="recycling"](around:30000,${lat},${lon});
+
+way["amenity"="recycling"](around:30000,${lat},${lon});
+
+relation["amenity"="recycling"](around:30000,${lat},${lon});
+
+node["amenity"="waste_transfer_station"](around:30000,${lat},${lon});
+
+way["amenity"="waste_transfer_station"](around:30000,${lat},${lon});
+
+node["shop"="scrap_yard"](around:30000,${lat},${lon});
+
+way["shop"="scrap_yard"](around:30000,${lat},${lon});
+
+);
+
+out center;
+
+`;
 
     let url =
     "https://overpass-api.de/api/interpreter?data=" +
@@ -259,19 +205,5 @@ function findLocation(){
     });
 
   });
-
-}
-
-
-// =====================
-// RECYCLE CHALLENGE
-// =====================
-
-function joinChallenge(){
-
-  document.getElementById(
-    "challengeText"
-  ).innerText =
-  "🔥 Hebat! Anda telah menyertai cabaran recycle minggu ini!";
 
 }
