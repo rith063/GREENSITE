@@ -1,454 +1,1901 @@
-<!DOCTYPE html>
+body{
+
+
+
+margin:0;
+
+
+
+font-family:Segoe UI;
+
+
+
+
+
+background:
+
+url("https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXBhX9nw7oQ94O3oumG8Lbh47ZSNgqeLhBpJBnFU9fNMx6CuLjtSOmAd%2Fm8Kau7%2B9c1RhREMt%2F9vycEffO5wn92Ho%2FG7ValLmgbZMMvaWEQfy7l13v%2BIRGw%2Bv%2B7yOrQmPg3rUXJ76LEjOEpJXaFEhJOhkOvgwJWhElGkRN7YQtDWOY8X4Qh3z4v7yhCf9wdMstA9mPPHX2vX8lNm8MFcYtryugauCDiC8sFW%2BpJIIvf%2FluGqlmwrmtu25E0IakGpo6elnN%2BChCDw2gFrysz6LKKxa4KOlECnfrnyIrXA2i4wunWAx0t03b9Po8W5mJKSKFK5W1j6nEjq13IrCxuAK%2Bm14AjkU6%2F4%2FrC2SjhA2t2TOiXbJ9evM%2Btj3PK2HlaxUAJnn2hkTyy6u0uKCQl89fBP%2FaXr5N7AwpF0SGmJupFuaMBeo%2FLTSvGMDVJSVfBNQ%2B6s3ZdRdZ%2Bi%2BbCiKjj0DJOLlC4%2BPg59g4XgDfYYQr0qoULu6LRN9%2FDk0C%2B3hg7JSfOCs1Z2M0qtJR5VE9mQqqIRirhf2ijPTQhHUrVpoptY3C8AZXgqjPL6iUHLXuUMrBCGW2MmXhOIIwPa7Xg4J4tOUPV5PwudqD%2FHLBLdQWnBZE5Lz%2BneFunjNbiNQy7n9rcqS1UllFYa74tDY1YfAMpOhPVDjNIhw3hgLhLFqU%3D&allow_caching=true&sz=w512")
+
+
+
+no-repeat center center fixed;
+
+
+
+
+
+background-size:cover;
+
+
+
+
+}
+
+
+
+
+
+
+
+body::before{
+
+
+
+content:"";
+
+
+
+position:fixed;
+
+
+
+inset:0;
+
+
+
+background:rgba(0,0,0,0.20);
+
+
+
+z-index:-1;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+header{
+
+
+
+text-align:center;
+
+
+
+padding:50px;
+
+
+
+color:#06402a;
+  
+
+
+
+}
+
+
+
+
+
+
+
+header h1{
+
+
+
+font-size:50px;
+
+
+
+}
+
+
+
+
+
+
+
+nav{
+
+
+
+margin-top:20px;
+
+
+
+}
+
+
+
+
+
+
+
+nav a{
+
+
+
+background:white;
+
+
+
+padding:12px 18px;
+
+
+
+margin:5px;
+width: 300px;
+height: 100px;
+border-style: solid;
+border-color: #06402a;
+
+
+border-radius:30px;
+
+
+
+text-decoration:none;
+
+
+
+color:#0b4d2b;
+
+
+
+font-weight:bold;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+section{
+
+
+
+padding:60px 20px;
+
+
+
+text-align:center;
+
+
+
+color:white;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* HARGA */
+
+
+
+
+
+.grid{
+
+
+
+display:grid;
+
+
+
+grid-template-columns:
+
+
+
+repeat(auto-fit,minmax(220px,1fr));
+
+
+
+gap:20px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.card{
+
+
+
+position:relative;
+
+
+
+background:rgba(255,255,255,0.93);
+
+
+
+color:#0b4d2b;
+
+
+
+padding:20px;
+
+
+
+border-radius:20px;
+
+
+
+overflow:hidden;
+
+
+
+transition:0.3s;
+
+
+
+box-shadow:-10px 10px rgb(6,64,42)
+
+
+
+}
+
+
+
+
+
+
+
+.card:hover{
+
+
+
+transform:translateY(-5px);
+
+
+
+}
+
+
+
+
+
+
+
+.card span{
+
+
+
+font-size:20px;
+
+
+
+font-weight:bold;
+
+
+
+}
+
+
+
+
+
+
+
+.up{
+
+
+
+color:green;
+
+
+
+}
+
+
+
+
+
+
+
+.down{
+
+
+
+color:red;
+
+
+
+}
+
+
+
+
+
+
+
+.stable{
+
+
+
+color:orange;
+
+
+
+}
+
+
+
+
+
+
+
+.criteria{
+
+
+
+position:absolute;
+
+
+
+bottom:-100%;
+
+
+
+left:0;
+
+
+
+width:100%;
+
+
+
+
+
+background:rgba(0,70,30,0.95);
+
+
+
+color:white;
+
+
+
+padding:15px;
+
+
+
+
+
+transition:0.4s;
+
+
+
+}
+
+
+
+
+
+
+
+.card:hover .criteria{
+
+
+
+bottom:0;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* KALKULATOR */
+
+
+
+
+
+.box{
+
+
+
+
+
+width:320px;
+
+
+
+margin:auto;
+
+
+
+
+
+
+background:rgba(255,255,255,0.92);
+
+
+
+
+
+padding:25px;
+
+
+width: 300px;
+height: 150px;
+border-style: solid;
+border-color: #06402a;
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+color:black;
+
+
+
+}
+
+
+
+
+
+
+
+.box select,
+
+
+
+.box input{
+
+
+
+
+
+width:100%;
+
+
+
+
+
+padding:12px;
+
+
+
+
+
+margin:10px 0;
+
+
+
+
+
+border-radius:10px;
+
+
+
+
+
+border:none;
+
+
+
+}
+
+
+
+
+
+
+
+button{
+
+
+
+
+
+width:100%;
+
+
+
+
+
+padding:12px;
+
+
+
+
+
+background:#0b4b2b;
+
+
+
+
+
+color:white;
+
+
+
+
+
+border:none;
+
+
+
+
+
+border-radius:10px;
+
+
+
+
+
+cursor:pointer;
+
+
+
+}
+
+
+
+
+
+
+
+button:hover{
+
+
+
+
+
+background:#119c56;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MAP */
+
+
+
+
+
+#map{
+
+
+
+
+
+height:450px;
+
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+margin-top:20px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* POSTER */
+
+
+
+
+
+.posterGrid{
+
+
+
+
+
+display:grid;
+
+
+
+
+
+grid-template-columns:
+
+
+
+repeat(auto-fit,minmax(300px,1fr));
+
+
+
+
+
+gap:25px;
+
+
+
+
+
+margin-top:40px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.poster{
+
+
+
+
+
+background:rgba(255,255,255,0.95);
+
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+overflow:hidden;
+
+
+
+
+
+color:#0b4d2b;
+
+
+
+
+
+transition:0.4s;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.poster:hover{
+
+
+
+
+
+transform:scale(1.03);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.poster img{
+
+
+
+
+
+width:100%;
+
+
+
+
+
+height:250px;
+
+
+
+
+
+object-fit:cover;
+
+
+
+}
+
+
+
+
+
+
+
+.posterText{
+
+
+
+
+
+padding:20px;
+
+
+
+}
+
+
+
+
+
+
+
+.posterText h3{
+
+
+
+
+
+margin-top:0;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* TIPS + FACTS + CHALLENGE */
+
+
+
+
+
+#tips,
+
+
+
+#facts,
+
+
+
+#challenge{
+
+
+
+
+
+padding:60px 20px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.tips-grid,
+
+
+
+.facts-grid{
+
+
+
+
+
+display:grid;
+
+
+
+
+
+grid-template-columns:
+
+
+
+repeat(auto-fit,minmax(250px,1fr));
+
+
+
+
+
+gap:20px;
+
+
+
+
+
+margin-top:30px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.tips-card,
+
+
+
+.fact-box,
+
+
+
+.challenge-box{
+
+
+
+
+
+background:rgba(255,255,255,0.92);
+
+
+
+
+
+color:#0b4d2b;
+
+
+
+
+
+padding:25px;
+
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+
+
+box-shadow:
+
+
+
+0 8px 20px rgba(0,0,0,0.25);
+
+
+
+
+
+
+
+backdrop-filter:blur(5px);
+
+
+
+
+
+
+
+transition:0.3s;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.tips-card:hover,
+
+
+
+.fact-box:hover,
+
+
+
+.challenge-box:hover{
+
+
+
+
+
+transform:
+
+
+
+translateY(-8px)
+
+
+
+scale(1.03);
+
+
+
+
+
+
+
+box-shadow:
+
+
+
+0 12px 25px rgba(0,0,0,0.35);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* CHALLENGE */
+
+
+
+
+
+.challenge-box{
+
+
+
+
+
+max-width:500px;
+
+
+
+
+
+margin:auto;
+
+
+
+}
+
+
+
+
+
+
+
+.challenge-box h3{
+
+
+
+
+
+font-size:28px;
+
+
+
+}
+
+
+
+
+
+
+
+.challenge-box button{
+
+
+
+
+
+margin-top:20px;
+
+
+
+
+
+cursor:pointer;
+
+
+
+
+
+font-size:16px;
+
+
+
+
+
+transition:0.3s;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.challenge-box button:hover{
+
+
+
+
+
+background:#12a05a;
+
+
+
+
+
+transform:scale(1.05);
+
+
+
+}
+
+
+
+
+
+
+
+#challengeText{
+
+
+
+
+
+margin-top:20px;
+
+
+
+
+
+font-size:20px;
+
+
+
+
+
+font-weight:bold;
+
+
+
+
+
+color:#0b4d2b;
+
+
+
+}
+MOHAMAD HARITH IRFAN BIN ZULHELMI KPM-Murid, Now
+https://anomali-channel.github.io/GREENSITE/
+
 <html lang="ms">
+
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>GreenSite</title>
+<title>GreenSite</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-  <!-- LEAFLET -->
-  <link rel="stylesheet"
-  href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
 </head>
 
+
 <body>
+
 
 <!-- HEADER -->
 
 <header>
 
-  <h1>♻️ GreenSite</h1>
-  <p>Smart Recycling Platform</p>
+<h1>♻️ GreenSite</h1>
 
-  <nav>
-    <a href="#harga">Harga</a>
-    <a href="#kalkulator">Kalkulator</a>
-    <a href="#lokasi">Lokasi</a>
-    <a href="#galeri">Kempen</a>
-  </nav>
+<p>Kitar Semula, Kini Lebih Mudah</p>
+
+
+<nav>
+
+<a href="#harga">Harga</a>
+
+<a href="#kalkulator">Kalkulator</a>
+
+<a href="#lokasi">Lokasi</a>
+
+<a href="#galeri">Galeri</a>
+
+</nav>
+
 
 </header>
+
+
 
 <!-- HARGA -->
 
 <section id="harga">
 
-  <h2>Harga & Trend Semasa</h2>
 
-  <div class="grid">
+<h2>Harga & Trend Semasa</h2>
 
-    <!-- 1 -->
-    <div class="card">
-      <h3>Botol Plastik</h3>
-      <span id="botol_plastikPrice">RM0.10/kg</span>
-      <p id="botol_plastikTrend" class="up">📈 Naik</p>
 
-      <div class="criteria">
-        ✔ Bersih<br>
-        ✔ Kering<br>
-        ✖ Berminyak
-      </div>
-    </div>
+<div class="grid">
 
-    <!-- 2 -->
-    <div class="card">
-      <h3>Kadbod</h3>
-      <span id="kadbodPrice">RM0.40/kg</span>
-      <p id="kadbodTrend" class="stable">➖ Stabil</p>
 
-      <div class="criteria">
-        ✔ Kering<br>
-        ✔ Bersih<br>
-        ✖ Basah
-      </div>
-    </div>
 
-    <!-- 3 -->
-    <div class="card">
-      <h3>Tin Aluminium</h3>
-      <span id="tin_aluminiumPrice">RM0.10/kg</span>
-      <p id="tin_aluminiumTrend" class="down">📉 Turun</p>
+<div class="card">
 
-      <div class="criteria">
-        ✔ Bersih<br>
-        ✖ Berkarat
-      </div>
-    </div>
+<h3>Botol Plastik</h3>
 
-    <!-- 4 -->
-    <div class="card">
-      <h3>Tembaga</h3>
-      <span id="tembagaPrice">RM25.00/kg</span>
-      <p id="tembagaTrend" class="up">📈 Naik</p>
+<span id="botol_plastikPrice">
+RM0.40/kg
+</span>
 
-      <div class="criteria">
-        ✔ Tembaga tulen<br>
-        ✖ Campur plastik
-      </div>
-    </div>
 
-    <!-- 5 -->
-    <div class="card">
-      <h3>Besi</h3>
-      <span id="besiPrice">RM0.30/kg</span>
-      <p id="besiTrend" class="stable">➖ Stabil</p>
 
-      <div class="criteria">
-        ✔ Tidak karat<br>
-      </div>
-    </div>
 
-    <!-- 6 -->
-    <div class="card">
-      <h3>Surat Khabar</h3>
-      <span id="surat_khabarPrice">RM0.15/kg</span>
-      <p id="surat_khabarTrend" class="up">📈 Naik</p>
+<div class="criteria">
 
-      <div class="criteria">
-        ✔ Kering<br>
-        ✖ Bersalut plastik
-      </div>
-    </div>
+✔ Bersih<br>
+✔ Kering<br>
+✖ Berminyak
 
-    <!-- 7 -->
-    <div class="card">
-      <h3>Majalah</h3>
-      <span id="majalahPrice">RM0.12/kg</span>
-      <p id="majalahTrend" class="stable">➖ Stabil</p>
+</div>
 
-      <div class="criteria">
-        ✔ Tidak koyak<br>
-        ✖ Basah
-      </div>
-    </div>
+</div>
 
-    <!-- 8 -->
-    <div class="card">
-      <h3>Botol Kaca</h3>
-      <span id="botol_kacaPrice">RM0.25/kg</span>
-      <p id="botol_kacaTrend" class="up">📈 Naik</p>
 
-      <div class="criteria">
-        ✔ Tidak pecah<br>
-        ✖ Retak
-      </div>
-    </div>
 
-    <!-- 9 -->
-    <div class="card">
-      <h3>Minyak Masak</h3>
-      <span id="minyak_masakPrice">RM2.00/kg</span>
-      <p id="minyak_masakTrend" class="down">📉 Turun</p>
 
-      <div class="criteria">
-        ✔ Ditapis<br>
-        ✖ Bercampur air
-      </div>
-    </div>
 
-    <!-- 10 -->
-    <div class="card">
-      <h3>PVC</h3>
-      <span id="pvcPrice">RM0.50/kg</span>
-      <p id="pvcTrend" class="stable">➖ Stabil</p>
+<div class="card">
 
-      <div class="criteria">
-        ✔ Bersih<br>
-        ✖ Cair
-      </div>
-    </div>
+<h3>Kadbod</h3>
 
-    <!-- 11 -->
-    <div class="card">
-      <h3>Telefon Lama</h3>
-      <span id="telefon_lamaPrice">RM5.00/unit</span>
-      <p id="telefon_lamaTrend" class="down">📉 Turun</p>
+<span id="kadbodPrice">
+RM0.25/kg
+</span>
 
-      <div class="criteria">
-        ✔ Ada bateri<br>
-        ✖ Motherboard hilang
-      </div>
-    </div>
 
-    <!-- 12 -->
-    <div class="card">
-      <h3>Laptop Lama</h3>
-      <span id="laptop_lamaPrice">RM50.00/unit</span>
-      <p id="laptop_lamaTrend" class="up">📈 Naik</p>
 
-      <div class="criteria">
-        ✔ Lengkap<br>
-        ✖ Skrin pecah teruk
-      </div>
-    </div>
+<div class="criteria">
 
-    <!-- 13 -->
-    <div class="card">
-      <h3>TV Lama</h3>
-      <span id="tv_lamaPrice">RM15.00/unit</span>
-      <p id="tv_lamaTrend" class="stable">➖ Stabil</p>
+✔ Kering<br>
+✔ Bersih<br>
+✖ Basah
 
-      <div class="criteria">
-        ✔ Ada panel<br>
-        ✖ Skrin pecah
-      </div>
-    </div>
+</div>
 
-    <!-- 14 -->
-    <div class="card">
-      <h3>Bateri Kereta</h3>
-      <span id="bateri_keretaPrice">RM15.50/unit</span>
-      <p id="bateri_keretaTrend" class="up">📈 Naik</p>
 
-      <div class="criteria">
-        ✔ Tidak bocor<br>
-        ✖ Pecah
-      </div>
-    </div>
+</div>
 
-    <!-- 15 -->
-    <div class="card">
-      <h3>Aircond</h3>
-      <span id="aircondPrice">RM80.00/unit</span>
-      <p id="aircondTrend" class="down">📉 Turun</p>
 
-      <div class="criteria">
-        ✔ Compressor ada<br>
-        ✖ Gas bocor
-      </div>
-    </div>
 
-    <!-- 16 -->
-    <div class="card">
-      <h3>Mesin Basuh</h3>
-      <span id="mesin_basuhPrice">RM62.50/unit</span>
-      <p id="mesin_basuhTrend" class="stable">➖ Stabil</p>
 
-      <div class="criteria">
-        ✔ Motor elok<br>
-        ✖ Karat
-      </div>
-    </div>
 
-    <!-- 17 -->
-    <div class="card">
-      <h3>Peti Ais</h3>
-      <span id="peti_aisPrice">RM70.00/unit</span>
-      <p id="peti_aisTrend" class="up">📈 Naik</p>
+<div class="card">
 
-      <div class="criteria">
-        ✔ Compressor ada<br>
-        ✖ Gas bocor
-      </div>
-    </div>
+<h3>Tin Aluminium</h3>
 
-    <!-- 18 -->
-    <div class="card">
-      <h3>Tayar</h3>
-      <span id="tayarPrice">RM3.00/unit</span>
-      <p id="tayarTrend" class="stable">➖ Stabil</p>
+<span id="tin_aluminiumPrice">
+RM2.30/kg
+</span>
 
-      <div class="criteria">
-        ✔ Tidak terbakar<br>
-        ✖ Pecah
-      </div>
-    </div>
 
-  </div>
+
+<div class="criteria">
+
+✔ Bersih<br>
+✖ Berkarat
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Tembaga</h3>
+
+<span id="tembagaPrice">
+RM25.00/kg
+</span>
+
+
+
+<div class="criteria">
+
+✔ Tembaga tulen<br>
+✖ Campur plastik
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Besi</h3>
+
+<span id="besiPrice">
+RM0.50/kg
+</span>
+
+
+
+
+<div class="criteria">
+
+✔ Tidak karat
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Surat Khabar</h3>
+
+<span id="surat_khabarPrice">
+RM0.35/kg
+</span>
+
+
+
+<div class="criteria">
+
+✔ Kering<br>
+✖ Bersalut plastik
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Majalah</h3>
+
+<span id="majalahPrice">
+RM0.12/kg
+</span>
+
+
+
+<div class="criteria">
+
+✔ Tidak koyak<br>
+✖ Basah
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Botol Kaca</h3>
+
+<span id="botol_kacaPrice">
+RM0.25/kg
+</span>
+
+
+<div class="criteria">
+
+✔ Tidak pecah<br>
+✖ Retak
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Minyak Masak</h3>
+
+<span id="minyak_masakPrice">
+RM2.70/kg
+</span>
+
+
+
+<div class="criteria">
+
+✔ Ditapis<br>
+✖ Bercampur air
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>PVC</h3>
+
+<span id="pvcPrice">
+RM0.50/kg
+</span>
+
+
+<div class="criteria">
+
+✔ Bersih<br>
+✖ Cair
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Telefon Lama</h3>
+
+<span id="telefon_lamaPrice">
+RM5.00/unit
+</span>
+
+
+
+<div class="criteria">
+
+✔ Ada bateri<br>
+✖ Motherboard hilang
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Laptop Lama</h3>
+
+<span id="laptop_lamaPrice">
+RM2.50/unit
+</span>
+
+
+
+<div class="criteria">
+
+✔ Lengkap<br>
+✖ Skrin pecah teruk
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>TV Lama</h3>
+
+<span id="tv_lamaPrice">
+RM3.00/unit
+</span>
+
+
+
+<div class="criteria">
+
+✔ Ada panel<br>
+✖ Skrin pecah
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Bateri Kereta</h3>
+
+<span id="bateri_keretaPrice">
+RM0.50/kg
+</span>
+
+
+
+<div class="criteria">
+
+✔ Tidak bocor<br>
+✖ Pecah
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Aircond</h3>
+
+<span id="aircondPrice">
+RM5.00/unit
+</span>
+
+
+
+<div class="criteria">
+
+✔ Compressor ada<br>
+✖ Gas bocor
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Mesin Basuh</h3>
+
+<span id="mesin_basuhPrice">
+RM7.00/unit
+</span>
+
+
+
+<div class="criteria">
+
+✔ Motor elok<br>
+✖ Karat
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Peti Ais</h3>
+
+<span id="peti_aisPrice">
+RM7.00/unit
+</span>
+
+
+
+<div class="criteria">
+
+✔ Compressor ada<br>
+✖ Gas bocor
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Tayar</h3>
+
+<span id="tayarPrice">
+RM3.00/unit
+</span>
+
+
+
+
+<div class="criteria">
+
+✔ Tidak terbakar<br>
+✖ Pecah
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>CPU Lengkap</h3>
+
+<span id="cpu_lengkapPrice">
+RM5.00/unit
+</span>
+
+
+
+<div class="criteria">
+
+✔ Kipas berfungsi<br>
+✖ Rosak teruk
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Wayar</h3>
+
+<span id="wayarPrice">
+RM1.00/kg
+</span>
+
+
+
+<div class="criteria">
+
+✖ Kuprum hilang
+
+</div>
+
+
+</div>
+
+
+</div>
 
 </section>
+
+
+
 
 <!-- KALKULATOR -->
 
+
 <section id="kalkulator">
 
-  <h2>Kalkulator Recycle</h2>
 
-  <div class="box">
+<h2>Kalkulator Recycle</h2>
+<style>
+    h2 {
+      color: #06402a;
+    }
+  </style>
 
-    <select id="material"></select>
+<div class="box">
 
-    <input
-    type="number"
-    id="qty"
-    placeholder="Masukkan kuantiti (unit/kg)">
 
-    <button onclick="calculate()">
-      Kira
-    </button>
+<select id="material"></select>
 
-    <p id="result"></p>
-    <p id="motivation"></p>
 
-  </div>
+<input 
+type="number"
+id="qty"
+placeholder="Masukkan kuantiti (unit/kg)">
+
+
+
+<button onclick="calculate()">
+
+Kira
+
+</button>
+
+
+<p id="result"></p>
+
+<p id="motivation"></p>
+
+
+</div>
+
 
 </section>
-  
+
+
+
+
+
 <!-- MAP -->
+
 
 <section id="lokasi">
 
-  <h2>Pusat Kitar Semula Berdekatan</h2>
 
-  <button onclick="findLocation()">
-    Cari Lokasi Saya
-  </button>
+<h2>Pusat Kitar Semula Berdekatan</h2>
 
-  <div id="map"></div>
+
+<button onclick="findLocation()">
+
+Cari Lokasi Saya
+
+</button>
+
+
+<div id="map"></div>
+
 
 </section>
-  
+
+
+
+
+
 <!-- GALERI -->
+
 
 <section id="galeri">
 
-  <h2>🌍 Kempen</h2>
 
-  <div class="posterGrid">
+<h2>🌍 Galeri</h2>
 
-    <div class="poster">
-      <img src="https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=1200&auto=format&fit=crop">
-      <div class="posterText">
-        <h3>Kurangkan Plastik</h3>
-        <p>
-          Plastik mengambil masa 450 tahun untuk terurai.
-          Kurangkan penggunaan plastik sekali guna.
-        </p>
-      </div>
-    </div>
 
-    <div class="poster">
-      <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?q=80&w=1200&auto=format&fit=crop">
-      <div class="posterText">
-        <h3>Kitar Semula Demi Bumi</h3>
-        <p>
-          Setiap bahan yang dikitar semula membantu
-          mengurangkan pencemaran alam sekitar.
-        </p>
-      </div>
-    </div>
+<div class="posterGrid">
 
-    <div class="poster">
-      <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?q=80&w=1200&auto=format&fit=crop">
-      <div class="posterText">
-        <h3>Selamatkan Hutan</h3>
-        <p>
-          Mengitar semula kertas membantu mengurangkan
-          penebangan pokok secara berlebihan.
-        </p>
-      </div>
-    </div>
 
-  </div>
+<div class="poster">
 
-</section>
-  
-<!-- TIPS KITAR SEMULA -->
+<img src="https://images.unsplash.com/photo-1492496913980-501348b61469">
 
-<section id="tips">
+<div class="posterText">
 
-  <h2>🌱 Tips Kitar Semula</h2>
+<h3>Kurangkan Plastik</h3>
 
-  <div class="tips-grid">
 
-    <div class="tips-card">
-      <h3>♻️ Asingkan Sampah</h3>
-      <p>
-        Asingkan plastik, kaca, logam dan
-        kertas supaya proses kitar semula lebih mudah.
-      </p>
-    </div>
+<p>
+Plastik mengambil masa 450 tahun untuk terurai.
+Kurangkan penggunaan plastik sekali guna.
+</p>
 
-    <div class="tips-card">
-      <h3>💧 Bersihkan Bahan</h3>
-      <p>
-        Basuh bekas makanan dan botol sebelum
-        dihantar ke pusat kitar semula.
-      </p>
-    </div>
 
-    <div class="tips-card">
-      <h3>🌍 Kurangkan Plastik</h3>
-      <p>
-        Gunakan beg guna semula dan elakkan
-        plastik sekali guna.
-      </p>
-    </div>
+</div>
 
-  </div>
 
-</section>
+</div>
 
-<!-- FAKTA ALAM SEKITAR -->
 
-<section id="facts">
 
-  <h2>📊 Fakta Alam Sekitar</h2>
+<div class="poster">
 
-  <div class="facts-grid">
 
-    <div class="fact-box">
-      <h3>500 Tahun</h3>
-      <p>
-        Plastik mengambil masa sehingga
-        500 tahun untuk terurai.
-      </p>
-    </div>
+<img src="https://images.unsplash.com/photo-1528323273322-d81458248d40">
 
-    <div class="fact-box">
-      <h3>1 Tan Kertas</h3>
-      <p>
-        Mengitar semula 1 tan kertas dapat
-        menyelamatkan 17 pokok.
-      </p>
-    </div>
 
-    <div class="fact-box">
-      <h3>95% Tenaga</h3>
-      <p>
-        Aluminium yang dikitar semula menjimatkan
-        sehingga 95% tenaga.
-      </p>
-    </div>
+<div class="posterText">
 
-  </div>
+
+<h3>Kitar Semula Demi Bumi</h3>
+
+
+<p>
+Setiap bahan yang dikitar semula membantu
+mengurangkan pencemaran alam sekitar.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="poster">
+
+
+<img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1">
+
+
+<div class="posterText">
+
+
+<h3>Selamatkan Hutan</h3>
+
+
+<p>
+Mengitar semula kertas membantu mengurangkan
+penebangan pokok secara berlebihan.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
 
 </section>
 
-<!-- CABARAN KITAR SEMULA -->
 
-<section id="challenge">
 
-  <h2>🏆 Cabaran Mingguan</h2>
 
-  <div class="challenge-box">
-
-    <h3>Recycle 10 Barang Minggu Ini</h3>
-
-    <p>
-      Kumpulkan sekurang-kurangnya
-      10 barang kitar semula minggu ini
-      untuk membantu mengurangkan
-      pencemaran alam sekitar.
-    </p>
-
-    <button onclick="joinChallenge()">
-      Sertai Cabaran
-    </button>
-
-    <p id="challengeText"></p>
-
-  </div>
-
-</section>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 <script src="script.js"></script>
 
+
 </body>
-</html>              
+
+</html>
