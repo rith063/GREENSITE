@@ -1,344 +1,1280 @@
-/* ====================== */
-/* LIVE PRICE SECTION */
-/* ====================== */
+body{
 
-const prices = {
-  // Stores all recycle item prices
 
-  botol_plastik:0.10, // Plastic bottle price per kg
-  kadbod:0.15, // Cardboard price per kg
-  tin_aluminium:0.10, // Aluminium can price per kg
-  tembaga:2.50, // Copper price per kg
-  besi:0.30, // Iron price per kg
-  surat_khabar:0.15, // Newspaper price per kg
-  majalah:0.12, // Magazine price per kg
-  botol_kaca:0.25, // Glass bottle price per kg
-  minyak_masak:2.00, // Cooking oil price per kg
-  pvc:0.20, // PVC plastic price per kg
 
-  telefon_lama:5.00, // Old phone price per unit
-  laptop_lama:8.00, // Old laptop price per unit
-  tv_lama:4.00, // Old TV price per unit
-  bateri_kereta:9.50, // Car battery price per unit
-  aircond:6.00, // Air conditioner price per unit
-  mesin_basuh:5.50, // Washing machine price per unit
-  peti_ais:7.00, // Refrigerator price per unit
-  tayar:3.00 // Tire price per unit
-};
+margin:0;
 
-/* ====================== */
-/* AUTO DROPDOWN */
-/* ====================== */
 
-let select =
-document.getElementById("material");
-/* Gets dropdown element from HTML */
 
-Object.keys(prices).forEach(item=>{
-/* Loops through all items inside prices object */
+font-family:Segoe UI;
 
-  let option =
-  document.createElement("option");
-  /* Creates dropdown option */
 
-  option.value = item;
-  /* Sets option value */
 
-  option.text =
-  item.replaceAll("_"," ").toUpperCase();
-  /* Replaces underscores with spaces
-     and converts text to uppercase */
 
-  select.appendChild(option);
-  /* Adds option into dropdown */
 
-});
+background:
 
-/* ====================== */
-/* LIVE TREND */
-/* ====================== */
+url("https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXBhX9nw7oQ94O3oumG8Lbh47ZSNgqeLhBpJBnFU9fNMx6CuLjtSOmAd%2Fm8Kau7%2B9c1RhREMt%2F9vycEffO5wn92Ho%2FG7ValLmgbZMMvaWEQfy7l13v%2BIRGw%2Bv%2B7yOrQmPg3rUXJ76LEjOEpJXaFEhJOhkOvgwJWhElGkRN7YQtDWOY8X4Qh3z4v7yhCf9wdMstA9mPPHX2vX8lNm8MFcYtryugauCDiC8sFW%2BpJIIvf%2FluGqlmwrmtu25E0IakGpo6elnN%2BChCDw2gFrysz6LKKxa4KOlECnfrnyIrXA2i4wunWAx0t03b9Po8W5mJKSKFK5W1j6nEjq13IrCxuAK%2Bm14AjkU6%2F4%2FrC2SjhA2t2TOiXbJ9evM%2Btj3PK2HlaxUAJnn2hkTyy6u0uKCQl89fBP%2FaXr5N7AwpF0SGmJupFuaMBeo%2FLTSvGMDVJSVfBNQ%2B6s3ZdRdZ%2Bi%2BbCiKjj0DJOLlC4%2BPg59g4XgDfYYQr0qoULu6LRN9%2FDk0C%2B3hg7JSfOCs1Z2M0qtJR5VE9mQqqIRirhf2ijPTQhHUrVpoptY3C8AZXgqjPL6iUHLXuUMrBCGW2MmXhOIIwPa7Xg4J4tOUPV5PwudqD%2FHLBLdQWnBZE5Lz%2BneFunjNbiNQy7n9rcqS1UllFYa74tDY1YfAMpOhPVDjNIhw3hgLhLFqU%3D&allow_caching=true&sz=w512")
 
-function updateLivePrices(){
-/* Function to update recycle prices automatically */
 
-  Object.keys(prices).forEach(item=>{
-  /* Loops through every recycle item */
 
-    let change =
-    (Math.random() * 0.10 - 0.05);
-    /* Generates random price change
-       between -0.05 and +0.05 */
+no-repeat center center fixed;
 
-    prices[item] += change;
-    /* Adds change to current price */
 
-    if(prices[item] < 0.01){
-      prices[item] = 0.01;
-    }
-    /* Prevents price from going below RM0.01 */
 
-    let priceElement =
-    document.getElementById(
-      item + "Price"
-    );
-    /* Finds HTML element for item price */
 
-    let trendElement =
-    document.getElementById(
-      item + "Trend"
-    );
-    /* Finds HTML element for item trend */
 
-    if(priceElement){
+background-size:cover;
 
-      let type =
-      ["telefon_lama","laptop_lama","tv_lama","bateri_kereta","aircond","mesin_basuh","peti_ais","tayar"]
-      .includes(item)
-      ? "/unit"
-      : "/kg";
-      /* Decides whether item uses unit or kg */
 
-      priceElement.innerText =
-      "RM" +
-      prices[item].toFixed(2) +
-      type;
-      /* Updates displayed price */
 
-      if(change > 0){
-      /* If price increased */
-
-        trendElement.innerHTML =
-        "📈 Naik";
-        /* Shows increasing trend */
-
-        trendElement.className =
-        "up";
-        /* Adds green color class */
-
-      }else if(change < 0){
-      /* If price decreased */
-
-        trendElement.innerHTML =
-        "📉 Turun";
-        /* Shows decreasing trend */
-
-        trendElement.className =
-        "down";
-        /* Adds red color class */
-
-      }else{
-      /* If no change */
-
-        trendElement.innerHTML =
-        "➖ Stabil";
-        /* Shows stable trend */
-
-        trendElement.className =
-        "stable";
-        /* Adds orange color class */
-
-      }
-
-    }
-
-  });
 
 }
 
-/* Runs updateLivePrices every 5 seconds */
-setInterval(updateLivePrices,5000);
 
-/* ====================== */
-/* CALCULATOR */
-/* ====================== */
 
-function calculate(){
-/* Function for recycle calculator */
 
-  let item =
-  document.getElementById(
-    "material"
-  ).value;
-  /* Gets selected recycle item */
 
-  let qty =
-  document.getElementById(
-    "qty"
-  ).value;
-  /* Gets quantity entered by user */
 
-  let total =
-  prices[item] * qty;
-  /* Calculates total recycle value */
 
-  document.getElementById(
-    "result"
-  ).innerText =
-  "💰 RM " +
-  total.toFixed(2);
-  /* Displays total money earned */
+body::before{
 
-  if(total >= 50){
-  /* If total is RM50 or higher */
 
-    document.getElementById(
-      "motivation"
-    ).innerText =
-    "🔥 Hebat! Anda bantu bumi!";
-    /* Motivational message */
 
-  }else if(total >= 20){
-  /* If total is RM20 or higher */
+content:"";
 
-    document.getElementById(
-      "motivation"
-    ).innerText =
-    "🌱 Bagus! Teruskan recycle!";
 
-  }else{
-  /* If total below RM20 */
 
-    document.getElementById(
-      "motivation"
-    ).innerText =
-    "♻️ Setiap usaha bermakna!";
-  }
+position:fixed;
+
+
+
+inset:0;
+
+
+
+background:rgba(0,0,0,0.20);
+
+
+
+z-index:-1;
+
+
 
 }
 
-/* ====================== */
-/* MAP REAL LOCATION */
-/* ====================== */
 
-function findLocation(){
-/* Finds user location */
 
-  if(!navigator.geolocation){
-    /* Checks if browser supports location */
 
-    alert("Browser tak support location");
-    return;
-  }
 
-  navigator.geolocation.getCurrentPosition(function(pos){
-  /* Gets current user position */
 
-    let lat = pos.coords.latitude;
-    /* Stores latitude */
 
-    let lon = pos.coords.longitude;
-    /* Stores longitude */
 
-    document.getElementById("map").innerHTML = "";
-    /* Clears old map */
 
-    let map = L.map('map').setView([lat,lon],15);
-    /* Creates Leaflet map */
+header{
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap'
-    }).addTo(map);
-    /* Adds OpenStreetMap tiles */
 
-    /* USER MARKER */
-    L.marker([lat,lon])
-      .addTo(map)
-      .bindPopup("📍 Lokasi anda")
-      .openPopup();
-    /* Places marker on user location */
 
-    /* RECYCLE CENTER SEARCH QUERY */
+text-align:center;
 
-    let query = `
-      [out:json];
-      (
-        node["amenity"="recycling"](around:20000,${lat},${lon});
-        way["amenity"="recycling"](around:20000,${lat},${lon});
-        relation["amenity"="recycling"](around:20000,${lat},${lon});
-      );
-      out center;
-    `;
-    /* Searches recycling centers
-       within 20km radius */
 
-    let url =
-    "https://overpass-api.de/api/interpreter?data=" +
-    encodeURIComponent(query);
-    /* Creates API URL */
 
-    fetch(url)
-    /* Sends request to Overpass API */
+padding:50px;
 
-    .then(res => res.json())
-    /* Converts response into JSON */
 
-    .then(data => {
 
-      let elements = data.elements;
-      /* Stores recycle center data */
+color:#06402a;
+  
 
-      if(!elements.length){
-        /* If no recycling center found */
 
-        alert("Tiada pusat recycle dijumpai");
-        return;
-      }
-
-      elements.forEach(place => {
-      /* Loops through recycle centers */
-
-        let pLat =
-        place.lat || place.center?.lat;
-        /* Gets recycle center latitude */
-
-        let pLon =
-        place.lon || place.center?.lon;
-        /* Gets recycle center longitude */
-
-        let name =
-        place.tags?.name ||
-        "♻️ Recycling Center";
-        /* Gets recycle center name */
-
-        let marker =
-        L.marker([pLat,pLon]).addTo(map);
-        /* Adds marker to map */
-
-        marker.bindPopup(`
-          <b>${name}</b><br>
-          Klik untuk navigate
-        `);
-        /* Popup text */
-
-        marker.on("click", function(){
-        /* Opens Google Maps navigation */
-
-          window.open(
-            `https://www.google.com/maps/dir/?api=1&destination=${pLat},${pLon}`,
-            "_blank"
-          );
-
-        });
-
-      });
-
-    });
-
-  });
 
 }
 
-/* ===================== */
-/* RECYCLE CHALLENGE */
-/* ===================== */
 
-function joinChallenge(){
-/* Runs when user joins challenge */
 
-  document.getElementById(
-    "challengeText"
-  ).innerText =
-  "🔥 Hebat! Anda telah menyertai cabaran recycle minggu ini!";
-  /* Displays success message */
+
+
+
+
+header h1{
+
+
+
+font-size:50px;
+font-family:Arial, Sans serif
+
+ 
+  
+
+
+
+}
+
+
+
+
+
+
+
+nav{
+
+
+
+margin-top:20px;
+
+
+
+}
+
+
+
+
+
+
+
+nav a{
+
+
+
+background:white;
+
+
+
+padding:12px 18px;
+
+
+
+margin:5px;
+width: 300px;
+height: 100px;
+border-style: solid;
+border-color: #06402a;
+
+
+border-radius:30px;
+
+
+
+text-decoration:none;
+
+
+
+color:#0b4d2b;
+
+
+
+font-weight:bold;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+section{
+
+
+
+padding:60px 20px;
+
+
+
+text-align:center;
+
+
+
+color:white;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* HARGA */
+
+
+
+
+
+.grid{
+
+
+
+display:grid;
+
+
+
+grid-template-columns:
+
+
+
+repeat(auto-fit,minmax(220px,1fr));
+
+
+
+gap:20px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.card{
+
+
+
+position:relative;
+
+
+
+background:rgba(255,255,255,0.93);
+
+
+
+color:#0b4d2b;
+
+
+
+padding:20px;
+
+
+
+border-radius:20px;
+
+
+
+overflow:hidden;
+
+
+
+transition:0.3s;
+
+
+
+box-shadow:-10px 10px rgb(6,64,42)
+
+
+
+}
+
+
+
+
+
+
+
+.card:hover{
+
+
+
+transform:translateY(-5px);
+
+
+
+}
+
+
+
+
+
+
+
+.card span{
+
+
+
+font-size:20px;
+
+
+
+font-weight:bold;
+
+
+
+}
+
+
+
+
+
+
+
+.up{
+
+
+
+color:green;
+
+
+
+}
+
+
+
+
+
+
+
+.down{
+
+
+
+color:red;
+
+
+
+}
+
+
+
+
+
+
+
+.stable{
+
+
+
+color:orange;
+
+
+
+}
+
+
+
+
+
+
+
+.criteria{
+
+
+
+position:absolute;
+
+
+
+bottom:-100%;
+
+
+
+left:0;
+
+
+
+width:100%;
+
+
+
+
+
+background:rgba(0,70,30,0.95);
+
+
+
+color:white;
+
+
+
+padding:15px;
+
+
+
+
+
+transition:0.4s;
+
+
+
+}
+
+
+
+
+
+
+
+.card:hover .criteria{
+
+
+
+bottom:0;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* KALKULATOR */
+
+
+
+
+
+.box{
+
+
+
+
+
+width:320px;
+
+
+
+margin:auto;
+
+
+
+
+
+
+background:rgba(255,255,255,0.92);
+
+
+
+
+
+padding:25px;
+
+
+width: 300px;
+height: 150px;
+border-style: solid;
+border-color: #06402a;
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+color:black;
+
+
+
+}
+
+
+
+
+
+
+
+.box select,
+
+
+
+.box input{
+
+
+
+
+
+width:100%;
+
+
+
+
+
+padding:12px;
+
+
+
+
+
+margin:10px 0;
+
+
+
+
+
+border-radius:10px;
+
+
+
+
+
+border:none;
+
+
+
+}
+
+
+
+
+
+
+
+button{
+
+
+
+
+
+width:100%;
+
+
+
+
+
+padding:12px;
+
+
+
+
+
+background:#0b4b2b;
+
+
+
+
+
+color:white;
+
+
+
+
+
+border:none;
+
+
+
+
+
+border-radius:10px;
+
+
+
+
+
+cursor:pointer;
+
+
+
+}
+
+
+
+
+
+
+
+button:hover{
+
+
+
+
+
+background:#119c56;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MAP */
+
+
+
+
+
+#map{
+
+
+
+
+
+height:450px;
+
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+margin-top:20px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* POSTER */
+
+
+
+
+
+.posterGrid{
+
+
+
+
+
+display:grid;
+
+
+
+
+
+grid-template-columns:
+
+
+
+repeat(auto-fit,minmax(300px,1fr));
+
+
+
+
+
+gap:25px;
+
+
+
+
+
+margin-top:40px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.poster{
+
+
+
+
+
+background:rgba(255,255,255,0.95);
+
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+overflow:hidden;
+
+
+
+
+
+color:#0b4d2b;
+
+
+
+
+
+transition:0.4s;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.poster:hover{
+
+
+
+
+
+transform:scale(1.03);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.poster img{
+
+
+
+
+
+width:100%;
+
+
+
+
+
+height:250px;
+
+
+
+
+
+object-fit:cover;
+
+
+
+}
+
+
+
+
+
+
+
+.posterText{
+
+
+
+
+
+padding:20px;
+
+
+
+}
+
+
+
+
+
+
+
+.posterText h3{
+
+
+
+
+
+margin-top:0;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* TIPS + FACTS + CHALLENGE */
+
+
+
+
+
+#tips,
+
+
+
+#facts,
+
+
+
+#challenge{
+
+
+
+
+
+padding:60px 20px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.tips-grid,
+
+
+
+.facts-grid{
+
+
+
+
+
+display:grid;
+
+
+
+
+
+grid-template-columns:
+
+
+
+repeat(auto-fit,minmax(250px,1fr));
+
+
+
+
+
+gap:20px;
+
+
+
+
+
+margin-top:30px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.tips-card,
+
+
+
+.fact-box,
+
+
+
+.challenge-box{
+
+
+
+
+
+background:rgba(255,255,255,0.92);
+
+
+
+
+
+color:#0b4d2b;
+
+
+
+
+
+padding:25px;
+
+
+
+
+
+border-radius:20px;
+
+
+
+
+
+
+
+box-shadow:
+
+
+
+0 8px 20px rgba(0,0,0,0.25);
+
+
+
+
+
+
+
+backdrop-filter:blur(5px);
+
+
+
+
+
+
+
+transition:0.3s;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.tips-card:hover,
+
+
+
+.fact-box:hover,
+
+
+
+.challenge-box:hover{
+
+
+
+
+
+transform:
+
+
+
+translateY(-8px)
+
+
+
+scale(1.03);
+
+
+
+
+
+
+
+box-shadow:
+
+
+
+0 12px 25px rgba(0,0,0,0.35);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* CHALLENGE */
+
+
+
+
+
+.challenge-box{
+
+
+
+
+
+max-width:500px;
+
+
+
+
+
+margin:auto;
+
+
+
+}
+
+
+
+
+
+
+
+.challenge-box h3{
+
+
+
+
+
+font-size:28px;
+
+
+
+}
+
+
+
+
+
+
+
+.challenge-box button{
+
+
+
+
+
+margin-top:20px;
+
+
+
+
+
+cursor:pointer;
+
+
+
+
+
+font-size:16px;
+
+
+
+
+
+transition:0.3s;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.challenge-box button:hover{
+
+
+
+
+
+background:#12a05a;
+
+
+
+
+
+transform:scale(1.05);
+
+
+
+}
+
+
+
+
+
+
+
+#challengeText{
+
+
+
+
+
+margin-top:20px;
+
+
+
+
+
+font-size:20px;
+
+
+
+
+
+font-weight:bold;
+
+
+
+
+
+color:#0b4d2b;
+
+
+
+}
+/* ANIMATION CARD MASUK */
+
+.card{
+  animation: fadeIn 1s ease;
+}
+
+
+@keyframes fadeIn{
+
+from{
+
+  opacity:0;
+
+  transform:translateY(20px);
+
+}
+
+
+to{
+
+  opacity:1;
+
+  transform:translateY(0);
+
+}
+
+}
+
+/* RESPONSIVE PHONE */
+
+@media(max-width:600px){
+
+header h1{
+
+font-size:35px;
+
+}
+
+
+header{
+
+padding:30px 10px;
+
+}
+
+
+nav a{
+
+display:block;
+
+margin:10px auto;
+
+width:200px;
+
+}
+
+
+section{
+
+padding:40px 10px;
+
+}
+
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.box{
+
+width:80%;
+
+height:auto;
+
+}
+
+
+#map{
+
+height:350px;
+
+}
+
+
+.posterGrid{
+
+grid-template-columns:1fr;
+
+}
 
 }
