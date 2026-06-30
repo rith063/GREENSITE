@@ -28,7 +28,7 @@ GREENSITE/
 
 ## How to Use
 
-1. Visit the live site: [GREENSITE on GitHub Pages](https://anomali-channel.github.io/GREENSITE/)
+1. Visit the live site: [GREENSITE on GitHub Pages](https://rith063.github.io/GREENSITE/)
 2. Navigate through sections using the top menu
 3. Check current recycling prices with live trends
 4. Calculate potential earnings using the calculator
