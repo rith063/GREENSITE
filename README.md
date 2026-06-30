@@ -46,11 +46,6 @@ GREENSITE/
 
 ## Key Features Explained
 
-### Live Price Updates
-Prices update every 5 seconds to simulate real market trends, with visual indicators:
-- 📈 Naik (Increase) - Green
-- 📉 Turun (Decrease) - Red
-- ➖ Stabil (Stable) - Orange
 
 ### Calculator
 Select a material, enter quantity, and get instant earnings calculation with motivational messages.
